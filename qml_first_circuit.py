@@ -20,7 +20,6 @@ def state_preparation(x):
     qml.RX(x[1], wires=1)
     qml.RX(x[2], wires=2)
     qml.RX(x[3], wires=3)
-    pass
 
 
 @qml.qnode(device, diff_method='adjoint')   #We declare a quantum node
@@ -52,8 +51,7 @@ def cross_entropy(X,y):
     # We use multidimensional array indexing to extract 
     # softmax probability of the correct label for each sample.
     log_likelihood = -np.log(p[range(m),y])
-    loss = np.sum(log_likelihood) / m
-    return loss
+    return np.sum(log_likelihood) / m
 
 
 def accuracy(X,y):
@@ -85,12 +83,12 @@ def load_data(path: str ="~/data/iris.csv"):
     iris_data = iris_data.to_numpy()      #convert to numpy
 
     data=[]
-    for k in range(len(iris_data)):       #the data are classed by names 
+    for k in range(len(iris_data)):   #the data are classed by names 
         if k < 50:                          #by batches of 50
             data.append([iris_data[k],0])
-        elif k < 100 and k >= 50:
+        elif k < 100:
             data.append([iris_data[k],1])
-        elif k >= 100 and k < 150:
+        elif k < 150:
             data.append([iris_data[k],2])
 
     np.random.shuffle(data)
@@ -112,14 +110,14 @@ X_train, y_train, X_test, y_test = load_data()
 weights = (0.01 * np.random.randn(NUM_LAYERS, NUM_WIRES, 3))
 
 #I've mad an easy batch loader it's not perfect, adapt with your train/test data
-BATCH_SIZE = 5   
+BATCH_SIZE = 5
 EPOCH = 10
 LR = 1e-3
 
 opt = AdamOptimizer(LR)
 
 
-for epoch in tqdm(range(EPOCH), desc="Epoch"):
+for _ in tqdm(range(EPOCH), desc="Epoch"):
     with tqdm(range(0,len(X_train)-BATCH_SIZE,BATCH_SIZE),desc="Train") as pbar:
 
         for batch in pbar:
