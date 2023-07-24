@@ -1,9 +1,7 @@
-# qml-circuit
-This QML-circuit was built using the tutorial  https://dvic.devinci.fr/en/resource/tutorial/introduction-to-quantum-machine-learning
-
 # Quantum Neural Network for Iris Flower Classification
 
 This code implements a Quantum Neural Network (QNN) for the classification of Iris flowers using PennyLane, a Python library for quantum machine learning. The QNN is designed to classify the Iris dataset into three categories based on the species of the flowers.
+This QML-circuit was built using the tutorial  https://dvic.devinci.fr/en/resource/tutorial/introduction-to-quantum-machine-learning
 
 ## Prerequisites
 
