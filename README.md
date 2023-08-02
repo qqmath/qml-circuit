@@ -1,7 +1,7 @@
 # Quantum Neural Network for Iris Flower Classification
 
 This code implements a Quantum Neural Network (QNN) for the classification of Iris flowers using PennyLane, a Python library for quantum machine learning. The QNN is designed to classify the Iris dataset into three categories based on the species of the flowers.
-This QML-circuit was built using the tutorial  https://dvic.devinci.fr/en/resource/tutorial/introduction-to-quantum-machine-learning.
+
 
 ## Prerequisites
 
@@ -137,4 +137,5 @@ for epoch in tqdm(range(EPOCH), desc="Epoch"):
 
 ## Conclusion
 
-This Quantum Neural Network provides a simple example of applying quantum computing to a classification task using the PennyLane library. The code can be further adapted and extended for more complex quantum models and datasets. Feel free to experiment with different hyperparameters and quantum circuit architectures to improve the classification performance. Happy quantum machine learning!
+This Quantum Neural Network provides a simple example of applying quantum computing to a classification task using the PennyLane library, it was built in regard to the tutorial  https://dvic.devinci.fr/en/resource/tutorial/introduction-to-quantum-machine-learning. 
+The code can be further adapted and extended for more complex quantum models and datasets. Feel free to experiment with different hyperparameters and quantum circuit architectures to improve the classification performance. Happy quantum machine learning!
